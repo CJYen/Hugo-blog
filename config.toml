@@ -1,0 +1,19 @@
+baseURL = "https://cjyen.netlify.app/"
+languageCode = "en-us"
+theme = "hyde"
+title = "CJ Yen"
+[params]
+description = "A Data Analyst and open-source enthusiast."
+disqusShortname = "cjyen"
+googleAnalytics = "UA-203235837-1"
+layoutReverse = false
+theme = "hyde"
+themeColor = "theme-base-08"
+
+[Menus]
+  main = [
+      {Name = "Data Analyst", URL = "/posts/cyclistic-bike-share-analysis"},
+      {Name = "Blog", URL = "/posts/why-hugo"},
+      {Name = "Github", URL = "https://github.com/cjyen/"},
+      {Name = "LinkedIn", URL = "https://www.linkedin.com/in/cj-yen/"}
+  ]
