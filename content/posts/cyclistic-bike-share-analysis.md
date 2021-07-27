@@ -5,98 +5,71 @@ date: 2021-07-26T19:09:09+08:00
 
 ### Quick Intro
 
-I have been working on the Google Data Analytics Professional Certificate course in Coursera for the last two months. This case study is to verify the eight steps of data clean-analyst learned in this series.
+This case study is to verify my learning steps for the last two months of studying in the [Data Analyst course](https://coursera.org/share/0ad6ead310ccce190847c121ebaea8ee).
 
-In this scenario, I'm a junior data analyst working in the marketing analyst team at Cyclistic, a fictional bike-share company based in Chicago. The marketing team is trying to design a marketing campaign that can convert casual riders to annual members. The goal is to find out their usage behavior to increase the conversion rate of their members.
+### Scenario
 
-Before starting the task, I need to check the leader's problem first:
-
-1. How do annual members and casual riders use Cyclistic bikes differently?
-2. Why would casual riders buy Cyclistic annual memberships?
-
-Based on the above problems, we can have the following plan and behavior.
+I'm a junior data analyst working in the marketing analyst team at Cyclistic, a fictional bike-share company based in Chicago. The marketing team is trying to design a marketing campaign that can convert casual riders to annual members. The goal is to find out user behavior and develop our membership strategy of converting casual users become members.
 
 ### Ask
 
-Before starting the task, I need to check the leader's problem first:
-
+Before starting, to find a way, I need to ask the leader these questions. 
 1. How do annual members and casual riders use Cyclistic bikes differently?
 2. Why would casual riders buy Cyclistic annual memberships?
 
-Based on the above problems, we can have the following plan and behavior.
-
 ### Prepare
 
-First, how to find out member behavior? The data shows the date and time of the user's use, the site, and the type of vehicle used.
+To find out user behavior between these two types of casual users and members. It needs to identify the time they use, their site, and the kinds of bikes they ride in the data.
+Gain insight into user behaviors' patterns; the marketing can follow up to make suitable promotions and marketing campaigns.
 
-To determine the difference between dates they use, site difference, and the length distinction between users. You can infer the peak riding period from the dates they use to facilitate marketing follow-up promotions.
+With download the data of information as following:
+1. Unique id for each ride
+2. Type of bikes (classic, electric)
+3. When the ride started
+4. When the ride ended
+5. Where the ride started
+6. Where the ride ended
+7. Whether is a member or a casual user
 
-Which stations have high traffic? This allows marketing to follow up to understand whether there is a need to adjust and promote.
-
-And, is there any difference in membership usage for their weekly usage? Also, is there any difference in the length they use?
-
-Finally, what is their habit of using models? Maybe it can provide follow-up adjustment and distribution.
-
-With this information, it may be possible to develop a suitable plan to help convert members.
-
-表格
- No | Column             | Description
- ---|--------------------|------------
- 1  | ride_id            | Unique identifier of each ride
- 2  | rideable_type      | Type of bike (classic, electric)
- 3  | started_at         | Timestamp of when a ride started
- 4  | ended_at           | Timestamp of when a ride ended
- 5  | start_station_name | Name of docking station where a ride started
- 6  | start_station_id   | ID of docking station where a ride started
- 7  | end_station_name   | Name of docking station where a ride ended
- 8  | end_station_id     | ID of docking station where a ride ended
- 9  | start_lat          | Latitude at the start of a ride
- 10 | start_lng          | Longitude at the start of a ride
- 11 | end_lat            | Latitude at the end of a ride
- 12 | end_lng            | Longitude at the end of a ride
- 13 | member_casual      | Whether user is a member or a casual rider
-
-_Ps. We download the data according to the data license agreement._
+_Ps. With download the data according to the data [license agreement](https://www.divvybikes.com/data-license-agreement)._
 
 ### Process
 
-In the data clean phase, I use the R language to process the data with null and error values and then transfer it to clean data. Because of the limitation of my computer, I choose to export the data first for subsequent use; if there is no such limitation, this step is unnecessary.
+In the data clean phase, I use the [R language](https://github.com/CJYen/Google-Data-Analytics-Capstone) to clean up the null values and unnecessary data. Since the limitation of my computer, I decided to export the clean data sets for further inspection. But this is not a necessary step for everyone.
 
 ### Analyze
 
-Next, for the convenience of analysis, continue to use the R language to convert the data into month and week; to convert the length of riding time.
+It would be much convenient to identify data when converting the raw data into months, weeks, and riding length for further analysis. I use the [R language](https://github.com/CJYen/Google-Data-Analytics-Capstone) to do so. Again, export the final data is an option that benefits those who lack of Memory(RAM), just like me.
 
 ### Share
 
-Last year, the proportion of users was temporarily the majority of members, and the number of non-members is about more than half of the number of members. (This is still without considering repeated users)
+The proportion of users in the last year, the majority are members. Casual users are approximately half of the number of members.
 ![pic1](/posts/01_ridership.png)
 
-Regardless of member or not, the peak month is from June to September, when it is warmer, so the campaign can be considered at this time.
+_The riding time between the casual users and members; members highly use than casual users._
+
+Regardless of members or not, the peak months starting from June to October can be considered a reasonable time for the campaign.
 ![pic2](/posts/02_traffic-by-month.png)
 
-During the week, the usage of members is more average, while casual is concentrated on holidays. Consider promoting a special time to attract members.
-![pic4](/posts/04_traffic-by-ridership.png)
+It is more average of members' riding during the week. Casual users are preferred riding on holidays. It can be considered a good time to do a special promotion to attract them to sign up as members.
+![pic3](/posts/03_traffic-by-ridership.png)
 
-In terms of site usage, members use more averagely during casual users go coastal attractions as the majority. It is possible to consider this, and most of the casual users are tourists. Another campaign can be promoted, a one-day ticket or a two-day ticket, an unlimited time riding plan.
-
-Member             |  Casual
-:-------------------------:|:-------------------------:
-![pic5](/posts/05_traffic-by-station.png "title-1")  |  ![pic6](/posts/06_traffic-by-station.png "title-2")
+Unlike members who commute between offices, casual users are more likely located around harbors in terms of sites usage. Another campaign can be a one-day ticket or two-day ticket of promotions for them to sign up.
+![pic4](/posts/04_traffic-by-station.png) 
 
 
-Then there is the car type. Most members ride classic, so you can deploy the site later; for non-members, the car type usage is more balanced except for holidays. Only on holidays, more classic rides, follow-up. Maybe you can make a questionnaire to help understand why they have differences in usage.
-Member             |  Casual
-:-------------------------:|:-------------------------:
-![pic7](/posts/07_ride-type-by-week.png)  |  ![pic8](/posts/08_ride-type-by-week.png)
 
-The last is the weekly usage rate. The average riding time of members is about 20 minutes, while the casual is approximately 40-50 minutes. Therefore, you can consider setting up a membership project to give back time to attract membership.
-![img_alt_you_want_to_control](/posts/09_average-time.png)
+
+Members are more likely to ride classic bikes, which can leverage the number of bike types as the adjustment ratio in the future needs.
+![pic5](/posts/05_ride-type-by-week.png) 
+
+_Ps. All Viz can be found on [Tableau](https://public.tableau.com/views/Cyclistic_Bike/StationTraffic?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)_
+
 
 
 ### Act
 
-In summary, the possible follow-up campaign suggestions are:
-
-1. Promote according to the more popular months, and put on relevant advertising.
-2. Use the holiday period to promote the two-day coupon or time-reward membership system to attract membership.
-3. Follow-up questions can be planned to understand why they choose classic models in the majority.
+To summarize, all possible campaign suggestions are:
+1. Promote according to the popular months, and put on advertising.
+2. Promote the two-day ticket or time-reward membership program to attract sign-up for members during the holiday period.
+3. Follow-up suggestions can be plans survey to understand their choice between classic bikes and electronic bikes.
