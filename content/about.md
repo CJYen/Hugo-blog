@@ -7,7 +7,8 @@ menu:
     weight: 1
 
 ---
-👋 Hi there! Bonjour!
+### 👋 Hi there! Bonjour!
+
 Hello there! I'm CJ, an open-source enthusiast. Love #r, #python, #crypto and love to explore new technologies and leverage them to solve real-world problems.
 
 Tools I love
@@ -22,13 +23,13 @@ Here are the languages and tools that I use for my data projects:
 📖   Currently :
 
 Following the MOOC courses below:
-- [x] ~~Google Data Analytics Specialization by Google~~
-- [x] ~~Google IT Automation with Python Specialization by Google~~
+- [x] [Google Data Analytics Specialization](https://coursera.org/share/0ad6ead310ccce190847c121ebaea8ee)  by Google
+- [x] [Google IT Automation with Python Specialization](https://coursera.org/share/544a3db6765307d61ce9a4546a369454) by Google
 
 Reading the books:
 
-- [x] ~~Grokking Algorithms: An illustrated guide for programmers and other curious people~~
-- [x] ~~An Output Encyclopedia That Will Alter Your Learning Results~~
+- [x] Grokking Algorithms: An illustrated guide for programmers and other curious people
+- [x] An Output Encyclopedia That Will Alter Your Learning Results
 - [ ] 学び効率が最大化するインプット大全
 
 🎖 I’m looking for team members to collaborate on Kaggle competitions.
